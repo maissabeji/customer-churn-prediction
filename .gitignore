@@ -1,0 +1,23 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables / secrets
+.env
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Data (we'll version this properly with DVC later, not raw in Git)
+data/raw/
+data/processed/
+
+# MLflow local tracking artifacts
+mlruns/
