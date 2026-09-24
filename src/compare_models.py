@@ -7,7 +7,7 @@ import mlflow.sklearn
 from xgboost import XGBClassifier
 
 from src.feature_engineering import load_and_clean, prepare_xy, build_preprocessor
-
+from src.predict import save_pipeline
 
 def compare_models():
     mlflow.set_experiment("churn-model-comparison")
@@ -102,7 +102,8 @@ def compare_models():
                 "xgboost.core.Booster",
                 "xgboost.sklearn.XGBClassifier"
             ]
-        )        
+        ) 
+        save_pipeline(pipe_xgb)       
         print("\n--- Threshold Tuning (XGBoost) ---")
         print(f"{'Threshold':<12} {'Precision':<12} {'Recall':<12} {'F1':<12}")
         print("-" * 48)
